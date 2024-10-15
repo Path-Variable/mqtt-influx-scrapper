@@ -46,25 +46,30 @@ jar {
   }
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = group
-            artifactId = project.name
-            version = version
+if (project.hasProperty("github.token")) {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = group
+                artifactId = project.name
+                version = version
 
-            from components.java
+                from components.java
+            }
         }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = "https://maven.pkg.github.com/Path-Variable/mqtt-influx-scrapper"
-            credentials {
-                username = "isaric"
-                password = property("github.token")
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = "https://maven.pkg.github.com/Path-Variable/mqtt-influx-scrapper"
+                credentials {
+                    username = "isaric"
+                    password = property("github.token")
+                }
             }
         }
     }
-
 }
+
+
+
+
