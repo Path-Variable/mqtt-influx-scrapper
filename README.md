@@ -1,5 +1,7 @@
 # mqtt-influx-scrapper
 
+![CI](https://github.com/Path-Variable/mqtt-influx-scrapper/actions/workflows/ci.yml/badge.svg?branch=main)
+
 Demo app for InfluxDB - MQTT presentation
 
 A small Java service that subscribes to MQTT topics, parses incoming messages and writes measurements to InfluxDB. This repository contains the demo implementation and a Dockerfile to run the service in a container.
